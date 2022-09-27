@@ -1,4 +1,5 @@
-
+models/*
+resources/*
 requirements.txt
 *.ipynb_checkpoints
 lab/*
