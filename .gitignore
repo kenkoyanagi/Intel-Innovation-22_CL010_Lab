@@ -1,0 +1,6 @@
+models/*
+resources/*
+requirements.txt
+*.ipynb_checkpoints
+lab/*
+Lab01/Lab01_02/nc_workspace/*
