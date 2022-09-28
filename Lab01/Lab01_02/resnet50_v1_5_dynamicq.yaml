@@ -23,28 +23,6 @@ quantization:                                        # optional. tuning constrai
   approach: post_training_dynamic_quant               # optional. default value is post_training_static_quant.                          
 
 evaluation:                                          # optional. required if user doesn't provide eval_func in neural_compressor.Quantization.
-  accuracy:                                          # optional. required if user doesn't provide eval_func in neural_compressor.Quantization.
-    metric:
-      topk: 1                                        # built-in metrics are topk, map, f1, allow user to register new metric.
-    dataloader:
-      batch_size: 1
-      dataset:
-        ImagenetRaw:
-          data_path: ..\..\resources\images
-          image_list: ..\..\resources\label.txt
-      transform:
-        Rescale: {}
-        Resize:
-          size: 256
-        CenterCrop:
-          size: 224
-        Normalize:
-          mean: [0.485, 0.456, 0.406]
-          std: [0.229, 0.224, 0.225]
-        Transpose:
-          perm: [2, 0, 1]
-        Cast:
-          dtype: float32
   performance:                                       # optional. used to benchmark performance of passing model.
     warmup: 10
     iteration: 1000
